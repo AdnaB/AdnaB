@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+   <head>
+	<SCRIPT SRC='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></SCRIPT>
+<SCRIPT>MathJax.Hub.Config({ tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}})</SCRIPT> 
+<style>
+body {
+  margin: 0;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 15%;
+  background-color: #ff99a8;
+  position: fixed;
+  height: 100%;
+  overflow: auto;
+}
+
+li a {
+  display: block;
+  color: #000;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+li a.active {
+  background-color: #ff0026;
+  color: white;
+}
+
+li a:hover:not(.active) {
+  background-color: #555;
+  color: white;
+}
+</style>
+   </head>
+   <body  style="background-color:#FFC0CB;">
+<ul>
+  <li><a href="website.html">Home</a></li>
+  <li><a href="quart.html">Quartets</a></li>
+  <li><a class="active"  href="trip.html">Triplets</a></li>
+  <li><a href="#demo">Demo Quartets</a></li>
+</ul>
+
+<div style="margin-left:15%;padding:1px 16px;height:1000px;">
+	<h1> <center>Triplets</center></h1>
+	
+	<h2>Model Triplets </h2>
+	<h3>Definitions</h3>
+	<p>
+	$$Agents = \{A,B,C\} = \mathbb{A}$$
+	$$sets = \{X, Y\} = \mathbb{S}$$
+	$$Three cards per set = \{1,2,3\} = \mathbb{N}$$
+	$$Cards = \mathbb{S} *  \mathbb{N} = \{X1,X2,X3,Y1,Y2,Y3\} = \mathbb{C}$$
+	$$Propositional atoms= A * C = \{A_{X1},A_{X2},A_{X3}, etc\} = \mathbb{P} $$
+	</p>
+	<h3>Notation</h3>
+	The following notations will be used in this paper to model asking for and receiving cards.<br>
+
+<center>agent a asks agent b for card x:</center>
+$$[?abx]$$ 
+For the case that a player gives a card to another player, we will use <i>substitutions</i> as defined by van Benthem et al.<br>
+<center>agent a gives card x to agent b:</center>
+$$a_x \mapsto b_x$$ 
+
+<h3>Knowledge Before the Start of the Game</h3>
+<i>Everyone starts with exactly two cards:</i>
+$$
+\forall i \in \mathbb{A}:   (i_{x1} \land i_{x2} \land \neg(i_{x3}) \land \neg(i_{y1}) \land \neg(i_{y2}) \land \neg(i_{y3})) \lor \\
+((i_{x1} \land i_{x3} \land \neg(i_{x2}) \land \neg(i_{y1}) \land \neg(i_{y2}) \land \neg(i_{y3}))  \lor \\
+((i_{x1} \land i_{y1} \land \neg(i_{x2}) \land \neg(i_{x3}) \land \neg(i_{y2}) \land \neg(i_{y3})) \lor \\
+... \lor \\
+((i_{y2} \land i_{y3} \land \neg(i_{x1}) \land \neg(i_{x2}) \land \neg(i_{x3}) \land \neg(i_{y1}))
+$$
+
+<h3>Rules During the Game</h3>
+<i>Each card is hold by exactly one player</i>
+$$
+     \forall c \in \mathbb{C}: (A_{c} \Rightarrow \neg B_{c} \land \neg C_{c}) \land (B_{c} \Rightarrow \neg A_{c} \land \neg C_{c}) \land (C_{c} \Rightarrow \neg A_{c} \land \neg B_{c}) 
+$$
+
+<i>If a player has a set complete, then he will always announce this</i>
+$$
+    \forall i \in \mathbb{A}, \forall s \in \mathbb{S}: (i_{s1} \land i_{s2} \land i_{s3}) \Rightarrow [i_{s1}] \land [i_{s2}] \land [i_{s3}]
+$$
+
+<i>A player can only ask for a card if the player has a card of the set in his hand</i>
+$$
+    [?isnj] \Rightarrow j_{s1} \lor  j_{s2} \lor  j_{s3}
+$$
+
+<i>A player only asks for cards that he does not hold himself</i>
+$$
+    \forall i,j \in A, \forall c \in C: \neg([?icj]\land i_{c})
+$$
+
+<i>If you are asked for a card that you hold in your hand, then you have to hand this card over</i>
+$$
+    \forall i,j \in A, \forall c \in C: (([?icj]\land j_{c}) \mapsto (i_c \land \neg{j_c}))
+$$
+
+<i>If a player gives a card to another player, then the first player does not hold the card anymore and the second player has the card</i>
+$$
+    \forall i,j \in A, \forall c \in C: [!ijc] \Rightarrow j_{c} \land \neg{i_{c}}
+$$
+
+<IMG SRC="homer.gif"align="right">
+   </body>
+</html>
