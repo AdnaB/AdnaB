@@ -8,6 +8,10 @@ body {
   margin: 0;
 }
 
+a:link {
+  text-decoration: none;
+}
+
 ul {
   list-style-type: none;
   margin: 0;
@@ -59,10 +63,10 @@ li a:hover:not(.active) {
 	<h3>Notation</h3>
 	The following notations will be used in this paper to model asking for and receiving cards.<br>
 
-<center>agent a asks agent b for card x:</center>
+<i>Agent a asks agent b for card x:</i>
 $$[?abx]$$ 
 For the case that a player gives a card to another player, we will use <i>substitutions</i> as defined by van Benthem et al.<br>
-<center>agent a gives card x to agent b:</center>
+<i>Agent a gives card x to agent b:</i>
 $$a_x \mapsto b_x$$ 
 
 <h3>Knowledge Before the Start of the Game</h3>
@@ -81,7 +85,7 @@ $$
      \forall c \in \mathbb{C}: (A_{c} \Rightarrow \neg B_{c} \land \neg C_{c} \land \neg D_{c}) \land (B_{c} \Rightarrow \neg A_{c} \land \neg C_{c} \land \neg D_{c}) \land (C_{c} \Rightarrow \neg A_{c} \land \neg B_{c} \land \neg D_{c}) \land (D_{c} \Rightarrow \neg A_{c} \land \neg B_{c} \land \neg C_{c})
 $$
 
-<i>If a player has a set complete, then he will always announce this</i>
+<i><a href="eater.html"><font color="black">If a player has a set complete,</font></a> then he will always announce this</i>
 $$
     \forall i \in \mathbb{A}, \forall s \in \mathbb{S}: (i_{s1} \land i_{s2} \land i_{s3} \land i_{s4}) \Rightarrow [i_{s1}] \land [i_{s2}] \land [i_{s3}] \land [i_{s4}]
 $$
