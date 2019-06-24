@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+   <head>
+    <SCRIPT SRC='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></SCRIPT>
+<SCRIPT>MathJax.Hub.Config({ tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}})</SCRIPT> 
+<style>
+body {
+  margin: 0;
+}
+
+a:link {
+  text-decoration: none;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 15%;
+  background-color: #ff99a8;
+  position: fixed;
+  height: 100%;
+  overflow: auto;
+}
+
+li a {
+  display: block;
+  color: #000;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+li a.active {
+  background-color: #ff0026;
+  color: white;
+}
+
+li a:hover:not(.active) {
+  background-color: #555;
+  color: white;
+}
+</style>
+   </head>
+   <body  style="background-color:#FFC0CB;">
+<ul>
+  <li><a href="index.html">Home</a></li>
+  <li><a href="quart.html">Quartets</a></li>
+  <li><a href="trip.html">Triplets</a></li>
+  <li><a class="active" href="demo.html">Demo Quartets</a></li>
+</ul>
+
+<div style="margin-left:15%;padding:1px 16px;height:1000px;">
+
+<h1><center>Demo</center></h1>
+This site shows the different states during a game of Triplet and the knowledge of the agents. <br>
+Our implementation can be found <a href="https://github.com/AdnaB/AdnaB.github.io/tree/master/DemoMAS">here.</a>
+
+<h2> Initialization </h2>
+We are playing a game of Triplets. The players are called P, Q and R. The first set consists of cards 1, 2 and 3 and the second set of cards 4, 5 and 6.<br>
+The cards are distributed in the following manner: Player P receives card 3 and 5, Player Q card 1 and 6 and Player R receives card 2 and 4. <br>
+The initial possible worlds are the following: #add image
+
+<br>
+In the initial state of the game, the players only know their own cards and nothing about the cards of the other players.
+
+<h2> First Question </h2>
+Player A starts by asking the first question. Player P asks player R for the card 1. <br>
+This question updates the knowledge of player Q and R in such a way that they now know that player P has to have a card of the first set, as the rules state that you are only allowed to ask for a card from a set from which you already possess one card. They also know that player P does not hold card 1, as players do not ask for cards they already have. Player Q does not know whether player P holds card 2 or 3. Player R does know that player P has card 3 as he holds card 2 and card 1 is the only card left. <br>
+Player Q answers that he does not have card 1. This knowledge is updated for all players, as this is a public announcement. 
+
+<h2> Second Question </h2>
+Player P did not receive a card, thus player Q now askes for a card. Player Q is not sure about any card the other players have. He thus makes a guess and askes player R for card 4. <br>
+The knowledge of the other players is again updated with the knowledge that player P holds a card of the second set and he does not hold card 4. <br>
+Player R holds card 4 and thus gives the card to player Q. This changes the real world as the card distribution changes to [P3, P5, Q1, Q4, Q6, R2]. Player Q does not announce that he has a set, thus player P and R know that he does not have all cards from the second set.
+
+<h2> Third Question </h2>
+Player Q got a card after the last question and can thus ask for another question. Player Q tries to get all cards from the second set and asks player R for card 5. <br>
+This updates the knowledge of player R, in the way that he knows that player Q does not hold card 5. Player P already knew that player Q does not hold card 5, as he has the card himself. <br>
+Player R responds that he does not have card 5.
+
+<h2> Fourth Question </h2> 
+Now it is the turn of player R. Player R only has a card of the first set thus has to ask for a card from that set. He knows that player P has card 3 thus he asks player P for that card. <br>
+#does this updated knowledge?
+Player P gives the card to player R. This changes the real world and the knowledge of all agents.
+
+<h2> Fifth Question </h2>
+Player R has another turn. He does not know who has card 1, and takes a guess and asks player Q for card 1.
+Player Q gives card 1 to player R. <br>
+This changes the real world. Player R now announces that he has a set. 
+
+<h2> Sixth Question </h2>
+Player R has no cards left, thus it is the turn of player P. Player P knows that player Q has to have all cards from the second set that he does not hold as player R does not have any cards left. <br>
+Player P now asks for card 4 from player Q, which he then receives. After this, he asks for card 6 from player Q which he also receives. Player P now announces that he has a set.
+
+<h2> The Game Ends </h2>
+Player P and R both have one set and thus win the game. Player Q loses.
+
+</body>
+</html>
+
