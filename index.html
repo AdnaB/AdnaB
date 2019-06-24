@@ -58,9 +58,9 @@ On this website, you can find our project for the course Multi-Agent Systems abo
 Our models of Triplets and Quartets can be found by using the menu on the left side of the page.
     <h3> Goal of the Project </h3>
     <p>
-    The goal of the project is to model the aforementioned game using epistemic model logic. We want to look at the effect on possible worlds when a player asks for a card, and what happens to the model depending on the reaction of the asked player. ###add here not what we want to learn, but have learned(If this all goes well we hope to learn something about good strategies in Quartets so we can win more games when challenging our  friends and families at this game.)<br>
+    The goal of the project is to model the aforementioned game using epistemic model logic. We want to look at the effect on possible worlds when a player asks for a card, and what happens to the model depending on the reaction of the asked player.<br>
 </p>
-<h3> Discussion of our Findings</h3>
+<h3> Discussion</h3>
 <h4>Triplets</h4>
 <p>
 We started this project by simplifying the rules of Quartet to only three players and six cards. But after some initial modeling, we soon encountered the problem that when we are using only three players after the first initial question of one player we knew who had the card even though the card was not held by the asked player. This is also due to the fact that you are only allowed to ask for a card if you do not have the card. So for example, if player one has the first card of the red cards and asks for the second red card from player two if player two has the card he has to hand it over. But if player two does not have the card, then player three has to have the card. As player one cannot hold the card and ask for it at the same time. This problem was solved by adding an extra player, as even though we know that player one and two do not have the red two, we still do not know whether player three or four are holding the card.
@@ -68,7 +68,12 @@ We started this project by simplifying the rules of Quartet to only three player
 
 <h4> Quartets</h4>
 <p>
-The modeling of four players instead of three made the problem more interesting but at the same time also more complex. For three players we started with ... possible worlds, whereas we started with ... possible worlds for four players.
+The modeling of four players instead of three made the problem more interesting but at the same time also more complex. For three players we started with 90 possible worlds, whereas we started with 2520 possible worlds for four players. The overall rules do not differ a lot from the rules for triplet. The added complexity can, for the most part, be found in the fact that there are more possible worlds and thus more actions and more uncertainty.
+</p>
+
+<h3>Conclusion</h3>
+We succeeded in modeling a simplified version of Quartets that can be used in a simulation to see the effects of different actions on the model. The amount of possible worlds of the models declines fast when cards are asked and the knowledge of the agents is updated.
+
 
 
 
