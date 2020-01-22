@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <style>
+      button{
+        background-color: #e6e6e6;
+        color: black;
+        padding: 5px 15px;
+        text-align: center;
+        font-size: 25px;
+        cursor: pointer;
+      }
+      button:hover {
+        background-color: grey;
+      }
+      .content {
+        max-width: 500px;
+        margin: auto;
+      }
+      .divider{
+        width:5px;
+        height:auto;
+        display:inline-block;
+       }
+    </style>
+
+    <title>Feedback 1</title>
+  </head>
+  <body>
+
+    <center>
+    <h1> How would you rate the overall conversation with Pepper on scale from 1(lowest) to 5(highest)? </h1>
+     <br>
+      <button class="button" id="b1" onclick="give_feedback(1, 0)">1</button>
+    <div class="divider"></div>
+    <button class="button" id="b2" onclick="give_feedback(2, 0)">2</button>
+      <div class="divider"></div>
+    <button class="button" id="b3" onclick="give_feedback(3, 0)">3</button>
+      <div class="divider"></div>
+    <button class="button" id="b4" onclick="give_feedback(4, 0)">4</button>
+      <div class="divider"></div>
+    <button class="button" id="b5" onclick="give_feedback(5, 0)">5</button>
+    <br>
+      <br>
+    <button onclick="next (2)"  id="next" style="display: none;">Next</button>
+    </center>
+
+    <script src="/libs/qimessaging/2/qimessaging.js"></script>
+  	<script src="js/jquery-3.1.0.min.js"></script>
+    <script type="text/javascript" src="js/script_questions.js"></script>
+
+
+
+  </body>
+</html>

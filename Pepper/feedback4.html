@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <style>
+      .button {
+        background-color: #e6e6e6;
+        color: black;
+        padding: 5px 15px;
+        text-align: center;
+        font-size: 25px;
+        cursor: pointer;
+      }
+      .button:hover {
+        background-color: grey;
+      }
+      .content {
+        max-width: 500px;
+        margin: auto;
+      }
+      .divider{
+        width:5px;
+        height:auto;
+        display:inline-block;
+       }
+    </style>
+
+    <title>Feedback 4</title>
+  </head>
+  <body>
+
+    <center>
+    <h1> How difficult or easy did you find to remember the path on scale from 1(very difficult) to 5(very easy)? </h1>
+     <br>
+      very difficult
+      <button class="button" id="b1" onclick="give_feedback(1, 3)">1</button>
+    <div class="divider"></div>
+    <button class="button" id="b2" onclick="give_feedback(2, 3)">2</button>
+      <div class="divider"></div>
+    <button class="button" id="b3" onclick="give_feedback(3, 3)">3</button>
+      <div class="divider"></div>
+    <button class="button" id="b4" onclick="give_feedback(4, 3)">4</button>
+      <div class="divider"></div>
+    <button class="button" id="b5" onclick="give_feedback(5, 3)">5</button>
+      very easy
+    <br>
+      <br>
+        <a onclick="done ()" class="button" id="next" style="display: none;">Next</a>
+    </center>
+
+    <script src="/libs/qimessaging/2/qimessaging.js"></script>
+  	<script src="js/jquery-3.1.0.min.js"></script>
+    <script type="text/javascript" src="js/script_questions.js"></script>
+
+
+
+  </body>
+</html>
